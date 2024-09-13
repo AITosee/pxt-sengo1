@@ -2,20 +2,20 @@
     "name": "Sengo1",
     "description": "",
     "dependencies": {
-        "core": "*",
-        "radio": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "main.blocks",
         "main.ts",
-        "README.md"
+        "README.md",
+        "sengo1.ts",
+        "enum.d.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "targetVersions": {
-        "target": "7.0.40",
+        "target": "7.0.42",
         "targetId": "microbit"
     },
     "supportedTargets": [
