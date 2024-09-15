@@ -32,7 +32,8 @@
         "lib/protoc/protocol_types.h",
         "lib/protoc/sentry_protocol_analysis.h",
         "lib/protoc/SimpleList.h",
-        "_locales/zh-cn/Sengo1-strings.json"
+        "_locales/zh-cn/Sengo1-strings.json",
+        "tutorial-info-cache.json"
     ],
     "testFiles": [
         "test.ts"
