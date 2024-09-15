@@ -1,6 +1,6 @@
 {
     "name": "Sengo1VisionSensor",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Sengo1 Vision Sensor",
     "dependencies": {
         "core": "*"
