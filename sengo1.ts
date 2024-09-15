@@ -309,7 +309,7 @@ namespace Sengo1VisionSensor {
    * Get vision detected number
    * @param type vision type
    */
-  //% blockId=Sengo_detected block="  Sengo1  algo%vision_type  num of results" color="#2E8B57"
+  //% blockId=Sengo_detected block="  Sengo1  algo%vision_type  num of result" color="#2E8B57"
   //% group="Operation Blocks" advanced=false
   //% weight=94
   export function Detected(vision_type: sentry_vision_e): number {
@@ -321,7 +321,7 @@ namespace Sengo1VisionSensor {
    * @param object_info Paramters type
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_color_value block="  Sengo1  algo Color|  %object_info of results" color="#2E8B57"
+  //% blockId=Sengo1_get_color_value block="  Sengo1  algo Color  |%object_info of result" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
@@ -341,7 +341,7 @@ namespace Sengo1VisionSensor {
    * @param object_info:  object information
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_value block="  Sengo1  algo%vision_type|  %object_info of results" color="#2E8B57"
+  //% blockId=Sengo1_get_value block="  Sengo1  algo%vision_type  |%object_info of result" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
@@ -360,7 +360,7 @@ namespace Sengo1VisionSensor {
    * @param object_info Paramters type
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_Line_value block="  Sengo1  algo Line|  %object_info of results" color="#2E8B57"
+  //% blockId=Sengo1_get_Line_value block="  Sengo1  algo Line  |%object_info of result" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
@@ -378,7 +378,7 @@ namespace Sengo1VisionSensor {
    * @param object_info Paramters type
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_qr_value block="  Sengo1  algo QrCode|  %object_info of results" color="#2E8B57"
+  //% blockId=Sengo1_get_qr_value block="  Sengo1  algo QrCode  |%object_info of result" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
@@ -394,7 +394,7 @@ namespace Sengo1VisionSensor {
       /**
    * Get the result of vision Qr value string.
    */
-  //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode  string  of detected results" color="#2E8B57"
+  //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode  string  of detecting result" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
@@ -409,7 +409,7 @@ namespace Sengo1VisionSensor {
    * @param lable Color lable
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_detected_color block=" Sengo1  algo Color  recognized %lable of results" color="#2E8B57"
+  //% blockId=Sengo1_detected_color block=" Sengo1  algo Color  recognized %lable of result" color="#2E8B57"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
   //% weight=88
