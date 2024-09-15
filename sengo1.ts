@@ -120,7 +120,7 @@ declare const enum sengo1_addr_e {
   ADDR1 = 0x60,
 }
 
-//% color="#ff6600" weight=20 icon="\uf085"
+//% color="#ff6600" width=20 icon="\uf085"
 namespace Sengo1 {
   const SENGO1_OK = 0x00;
 
@@ -184,6 +184,7 @@ namespace Sengo1 {
   //% blockId=Sengo1_begin block=" Initialize  Sengo1  port %mode |addr%addr "
   //% mode.defl=sentry_mode_e.kI2CMode
   //% group="Settings Blocks"
+  //% weight=100
   export function Begin(mode: sentry_mode_e, addr: sengo1_addr_e) {
     while (sengo1_Begin(mode, addr) != SENGO1_OK);
   }
@@ -193,6 +194,7 @@ namespace Sengo1 {
    */
   //% blockId=Sengo1_vision_Set block=" Set  Sengo1  %enable| algo%vision_type "
   //% group="Settings Blocks"
+  //% weight=98
   export function VisionSetStatus(
     status: sengo1_status,
     vision_type: sentry_vision_e
@@ -208,11 +210,12 @@ namespace Sengo1 {
    * @param undetected_color led color while sensor undetected target.
    */
   //% blockId=Sengo1_led_set_color block=" Set  Sengo1  LEDs' color %detected_color|when targets were detected otherwise %undetected_color luma(1-15) %leval "
-  //% detected_color.defl=sentry_led_color_e.kLedRed
-  //% undetected_color.defl=sentry_led_color_e.kLedGreen
+  //% detected_color.defl=sentry_led_color_e.kLedBlue
+  //% undetected_color.defl=sentry_led_color_e.kLedRed
   //% leval.min=0 leval.max=15 leval.defl=1
-  //% weight=200 inlineInputMode=inline
+  //% width=200 inlineInputMode=inline
   //% group="Settings Blocks"
+  //% weight=99
   export function LedSetColor(
     detected_color: sentry_led_color_e,
     undetected_color: sentry_led_color_e,
@@ -228,10 +231,11 @@ namespace Sengo1 {
    * @param vision_type: vision type.
    * @param max_num max prama number.
    */
-  //% blockId=Sengo1_vision_SetParamNum block=" Set  Sengo1  algo%vision_type|max number %max_num "
+  //% blockId=Sengo1_vision_SetParamNum block=" Set  Sengo1  algo%vision_type|  max number %max_num "
   //% max_num.min=1 max_num.max=25 max_num.defl=1
   //% group="Settings Blocks"
   //% blockHidden=true
+  //% weight=97
   export function SetParamNum(vision_type: sentry_vision_e, max_num: number) {
     while (sengo1_SetParamNum(vision_type, max_num) != SENGO1_OK);
   }
@@ -240,10 +244,10 @@ namespace Sengo1 {
    * color prama.
    * @param x ROI centre x.
    * @param y ROI centre y.
-   * @param w ROI weight.
+   * @param w ROI width.
    * @param h ROI height.
    */
-  //% blockId=Sengo1_vision_color_param block=" Set  Sengo1  algo Color x-cood%x| y-cood%y| weight%w| height%h"
+  //% blockId=Sengo1_vision_color_param block=" Set  Sengo1  algo Color  x-cood%x| y-cood%y| width%w| height%h"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% x.defl=50
   //% y.defl=50
@@ -251,6 +255,7 @@ namespace Sengo1 {
   //% h.defl=4
   //% inlineInputMode=inline
   //% group="Settings Blocks"
+  //% weight=96
   export function SetColorParam(
     x: number,
     y: number,
@@ -271,18 +276,19 @@ namespace Sengo1 {
 
   /**
    * blod prama.
-   * @param w detecte min weight.
+   * @param w detecte min width.
    * @param h detecte min height.
    * @param l detecte lable.
    */
-  //% blockId=Sengo1_vision_bold_param block=" Set  Sengo1  algo Bold min-weight%w| min-height%h| lable%l"
+  //% blockId=Sengo1_vision_blob_param block=" Set  Sengo1  algo Blob  min-width%w| min-height%h| lable%l"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% w.defl=3
   //% h.defl=4
   //% l.defl=color_label_e.kColorRed
   //% inlineInputMode=inline
   //% group="Settings Blocks"
-  export function SetBoldParam(
+  //% weight=95
+  export function SetBlobParam(
     w: number,
     h: number,
     l: color_label_e,
@@ -303,8 +309,9 @@ namespace Sengo1 {
    * Get vision detected number
    * @param type vision type
    */
-  //% blockId=Sengo_detected block="  Sengo1  algo%vision_type num of results" color="#2E8B57"
+  //% blockId=Sengo_detected block="  Sengo1  algo%vision_type  num of results" color="#2E8B57"
   //% group="Operation Blocks" advanced=false
+  //% weight=94
   export function Detected(vision_type: sentry_vision_e): number {
     return sengo1_GetValue(<number>vision_type);
   }
@@ -314,12 +321,13 @@ namespace Sengo1 {
    * @param object_info Paramters type
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_color_value block="  Sengo1  algo Color| %object_info of results" color="#2E8B57"
+  //% blockId=Sengo1_get_color_value block="  Sengo1  algo Color|  %object_info of results" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% object_info.defl=5
   //% group="Operation Blocks"
+  //% weight=93
   export function ColorRcgValue(
     object_info: sentry_color_info_e,
     obj_id: number = 1
@@ -333,11 +341,12 @@ namespace Sengo1 {
    * @param object_info:  object information
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_value block="  Sengo1  algo%vision_type| %object_info of results" color="#2E8B57"
+  //% blockId=Sengo1_get_value block="  Sengo1  algo%vision_type|  %object_info of results" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
+  //% weight=92
   export function GetValue(
     vision_type: sentry_vision_e_1,
     object_info: sentry_obj_info_e,
@@ -351,11 +360,12 @@ namespace Sengo1 {
    * @param object_info Paramters type
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_Line_value block="  Sengo1  algo Line| %object_info of results" color="#2E8B57"
+  //% blockId=Sengo1_get_Line_value block="  Sengo1  algo Line|  %object_info of results" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
+  //% weight=91
   export function LineValue(
     object_info: sentry_Line_info_e,
     obj_id: number = 1
@@ -368,11 +378,12 @@ namespace Sengo1 {
    * @param object_info Paramters type
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_qr_value block="  Sengo1  algo QrCode| %object_info of results" color="#2E8B57"
+  //% blockId=Sengo1_get_qr_value block="  Sengo1  algo QrCode|  %object_info of results" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
+  //% weight=90
   export function QrcodeValue(
     object_info: sentry_qr_info_e,
     obj_id: number = 1
@@ -383,11 +394,12 @@ namespace Sengo1 {
       /**
    * Get the result of vision Qr value string.
    */
-  //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode string  of detected results" color="#2E8B57"
+  //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode  string  of detected results" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
+  //% weight=89
   export function QrcodeValueString( ): string {
     return sengo1_GetQrCodeValue();
   }
@@ -397,9 +409,10 @@ namespace Sengo1 {
    * @param lable Color lable
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_detected_color block=" Sengo1  algo Color recognized %lable of results" color="#2E8B57"
+  //% blockId=Sengo1_detected_color block=" Sengo1  algo Color  recognized %lable of results" color="#2E8B57"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
+  //% weight=88
   export function DetectedColor(
     lable: color_label_e,
     obj_id: number = 1
@@ -418,10 +431,11 @@ namespace Sengo1 {
    * @param lable Blob lable
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_detected_blob block=" Sengo1  algo Blob detected %lable of results" color="#2E8B57"
+  //% blockId=Sengo1_detected_blob block=" Sengo1  algo Blob  detected %lable blob" color="#2E8B57"
   //% lable.defl=color_label_e.kColorRed
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
+  //% weight=87
   export function DetectedBlob(
     lable: color_label_e,
     obj_id: number = 1
@@ -437,9 +451,10 @@ namespace Sengo1 {
    * @param lable Card lable
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_detected_card block=" Sengo1  algo Card recognized %lable of results" color="#2E8B57"
+  //% blockId=Sengo1_detected_card block=" Sengo1  algo Card  recognized %lable" color="#2E8B57"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
+  //% weight=86
   export function DetectedCard(
     lable: card_label_e,
     obj_id: number = 1
@@ -454,9 +469,10 @@ namespace Sengo1 {
    * @param lable Ball lable
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_detected_ball block=" Sengo1  algo Ball recognized %lable of results" color="#2E8B57"
+  //% blockId=Sengo1_detected_ball block=" Sengo1  algo Ball  recognized %lable" color="#2E8B57"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
+  //% weight=85
   export function DetectedBall(
     lable: ball_label_e,
     obj_id: number = 1
