@@ -1,4 +1,4 @@
-declare namespace Sengo1 {
+declare namespace Sengo1VisionSensor {
   
   //% shim=tosee_sentry::sengo1_Begin
   function sengo1_Begin(mode: number, addr: number): number;

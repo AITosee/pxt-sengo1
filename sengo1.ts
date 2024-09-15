@@ -121,7 +121,7 @@ declare const enum sengo1_addr_e {
 }
 
 //% color="#ff6600" icon="\uf085"
-namespace Sengo1 {
+namespace Sengo1VisionSensor {
   const SENGO1_OK = 0x00;
 
   //% shim=tosee_sentry::sengo1_Begin
