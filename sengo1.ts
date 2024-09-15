@@ -120,7 +120,7 @@ declare const enum sengo1_addr_e {
   ADDR1 = 0x60,
 }
 
-//% color="#ff6600" width=20 icon="\uf085"
+//% color="#ff6600" icon="\uf085"
 namespace Sengo1 {
   const SENGO1_OK = 0x00;
 
