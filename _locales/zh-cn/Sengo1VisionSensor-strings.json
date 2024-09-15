@@ -87,7 +87,7 @@
   "ball_label_e.kBallTableTennis|block": "乒乓球",
   "ball_label_e.kBallTennis|block": "网球",
 
-  "{id:category}Sengo1": "Sengo1视觉传感器",
+  "{id:category}Sengo1VisionSensor": "Sengo1视觉传感器",
   "{id:group}Settings Blocks": "设置模块",
   "{id:group}Operation Blocks": "运行模块"
 }
