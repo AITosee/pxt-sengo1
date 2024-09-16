@@ -341,7 +341,7 @@ namespace Sengo1VisionSensor {
    * @param object_info:  object information
    * @param obj_id:  object index
    */
-  //% blockId=Sengo1_get_value block="  Sengo1  algo%vision_type  %object_info of result" color="#2E8B57"
+  //% blockId=Sengo1_get_value block="  Sengo1  algo%vision_type   %object_info of result" color="#2E8B57"
   //% inlineInputMode=inline
   //% expandableArgumentMode="enabled"
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
