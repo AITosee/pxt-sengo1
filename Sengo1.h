@@ -84,7 +84,7 @@ namespace tosee_sentry
     /* Sentry ball label */
     enum ball_label_e
     {
-      //% block="TableTennis"
+      //% block="Table Tennis"
       kBallTableTennis = 1,
       //% block="Tennis"
       kBallTennis = 2
