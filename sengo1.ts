@@ -12,6 +12,8 @@ declare const enum sentry_vision_e_1 {
   kVisionCard = 6,
   //% block="Body"
   kVisionBody = 7,
+  //% block="Face"
+  kVisionFace = 8,
   //% block="QrCode"
   //% blockHidden=true
   kVisionQrCode = 9,
