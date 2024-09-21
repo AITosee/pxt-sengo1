@@ -7,6 +7,7 @@ declare const enum sentry_vision_e_1 {
   //% block="Ball"
   kVisionBall = 3,
   //% block="Line"
+  //% blockHidden=true
   kVisionLine = 4,
   //% block="Card"
   kVisionCard = 6,
@@ -220,7 +221,7 @@ namespace Sengo1VisionSensor {
   //% blockId=Sengo1_led_set_color block=" Set  Sengo1  LEDs' color %detected_color|when targets were detected otherwise %undetected_color luma(1-15) %leval "
   //% detected_color.defl=sentry_led_color_e.kLedBlue
   //% undetected_color.defl=sentry_led_color_e.kLedRed
-  //% leval.min=0 leval.max=15 leval.defl=1
+  //% leval.min=1 leval.max=15 leval.defl=1
   //% width=200 inlineInputMode=inline
   //% group="Settings Blocks"
   //% weight=99
