@@ -33,6 +33,9 @@
         "lib/protoc/sentry_protocol_analysis.h",
         "lib/protoc/SimpleList.h",
         "_locales/zh-cn/Sengo1VisionSensor-strings.json",
+        "_locales/zh-cn/Sengo1VisionSensor-jsdoc-strings.json",
+        "_locales/zh-tw/Sengo1VisionSensor-strings.json",
+        "_locales/zh-tw/Sengo1VisionSensor-jsdoc-strings.json",
         "tutorial-info-cache.json"
     ],
     "testFiles": [
