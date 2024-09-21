@@ -26,7 +26,7 @@
     "Sengo1VisionSensor.GetValue": "算法结果",
     "Sengo1VisionSensor.GetValue|param|vision_type": "算法类型",
     "Sengo1VisionSensor.ColorRcgValue": "颜色识别算法结果",
-    "Sengo1VisionSensor.LineValue": "线段检测算法结果",
+    "Sengo1VisionSensor.LineValue": "线条检测算法结果",
     "Sengo1VisionSensor.QrRcgValue": "二维码识别结果",
     "Sengo1VisionSensor.GetQrCodeValue": "二维码识别结果字符串  ",
     "Sengo1VisionSensor.Rows": "图像宽度 ",

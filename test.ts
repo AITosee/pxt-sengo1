@@ -49,7 +49,7 @@ function 人脸识别() {
         }
     }
 }
-function 线段检测() {
+function 线条检测() {
     Sengo1VisionSensor.LedSetColor(sentry_led_color_e.kLedRed, sentry_led_color_e.kLedYellow, 1)
     Sengo1VisionSensor.VisionSetStatus(sengo1_status.Enable, sentry_vision_e.kVisionLine)
     while (true) {
@@ -135,7 +135,7 @@ basic.forever(function () {
     颜色识别()
     色块检测()
     球体识别()
-    线段检测()
+    线条检测()
     人体检测()
     人脸识别()
     卡片识别()
