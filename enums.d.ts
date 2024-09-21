@@ -15,6 +15,8 @@
     kVisionCard = 6,
     //% block="Body"
     kVisionBody = 7,
+    //% block="Face"
+    kVisionFace = 8,
     //% block="QrCode"
     kVisionQrCode = 9,
     //% blockHidden=true

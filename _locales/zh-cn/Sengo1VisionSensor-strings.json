@@ -27,6 +27,10 @@
 
   "Sengo1VisionSensor.SetBlobParam|block": "设置  Sengo1  色块检测  最小宽度%w| 最小高度%h | 颜色%l ",
 
+  "Sengo1VisionSensor.SetFaceParam|block": "设置  Sengo1  人脸识别  %l编号%face_id ",
+  "face_label_e.FaceLabelSave|block": "保存数据并",
+  "face_label_e.FaceLabelClear|block": "删除",
+
   "Sengo1VisionSensor.LedSetColor|block": "设置  Sengo1  检测到目标时LED显示 %detected_color|否则 %undetected_color亮度(1~15)%leval ",
   "sentry_led_color_e.kLedBlue|block": "蓝色",
   "sentry_led_color_e.kLedClose|block": "关闭",

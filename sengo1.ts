@@ -1,23 +1,22 @@
-declare const enum sentry_vision_e_1
-{
-//% block="Color"
-//% blockHidden=true
-kVisionColor = 1,
-//% block="Blob"
-kVisionBlob = 2,
-//% block="Ball"
-kVisionBall = 3,
-//% block="Line"
-kVisionLine = 4,
-//% block="Card"
-kVisionCard = 6,
-//% block="Body"
-kVisionBody = 7,
-//% block="QrCode"
-//% blockHidden=true
-kVisionQrCode = 9,
-//% blockHidden=true
-kVisionMaxType = 10,
+declare const enum sentry_vision_e_1 {
+  //% block="Color"
+  //% blockHidden=true
+  kVisionColor = 1,
+  //% block="Blob"
+  kVisionBlob = 2,
+  //% block="Ball"
+  kVisionBall = 3,
+  //% block="Line"
+  kVisionLine = 4,
+  //% block="Card"
+  kVisionCard = 6,
+  //% block="Body"
+  kVisionBody = 7,
+  //% block="QrCode"
+  //% blockHidden=true
+  kVisionQrCode = 9,
+  //% blockHidden=true
+  kVisionMaxType = 10,
 }
 
 declare const enum sentry_led_color_e {
@@ -118,6 +117,13 @@ declare const enum sentry_qr_info_e {
 declare const enum sengo1_addr_e {
   //% block="0x60"
   ADDR1 = 0x60,
+}
+
+declare const enum face_label_e {
+  //% block="save data as"
+  FaceLabelSave = 1,
+  //% block="delete data"
+  FaceLabelClear = 0,
 }
 
 //% color="#ff6600" icon="\uf085"
@@ -306,6 +312,27 @@ namespace Sengo1VisionSensor {
   }
 
   /**
+   * blod prama.
+   * @param w detecte min width.
+   * @param h detecte min height.
+   * @param l detecte lable.
+   */
+  //% blockId=Sengo1_vision_face_param block=" Set  Sengo1  algo Face  %l ID %face_id "
+  //% face_id.min=1 face_id.max=10 face_id.defl=1
+  //% inlineInputMode=inline
+  //% group="Settings Blocks"
+  //% weight=94
+  export function SetFaceParam(l: face_label_e, face_id: number = 1) {
+    let prama = pins.createBuffer(10);
+
+    prama.setNumber(NumberFormat.UInt16BE, 8, l);
+
+    while (
+      sengo1_SetParam(sentry_vision_e.kVisionBlob, prama, face_id) != SENGO1_OK
+    );
+  }
+
+  /**
    * Get vision detected number
    * @param type vision type
    */
@@ -332,7 +359,11 @@ namespace Sengo1VisionSensor {
     object_info: sentry_color_info_e,
     obj_id: number = 1
   ): number {
-    return GetValue(<number>sentry_vision_e.kVisionColor, <number>object_info, obj_id);
+    return GetValue(
+      <number>sentry_vision_e.kVisionColor,
+      <number>object_info,
+      obj_id
+    );
   }
 
   /**
@@ -370,10 +401,14 @@ namespace Sengo1VisionSensor {
     object_info: sentry_Line_info_e,
     obj_id: number = 1
   ): number {
-    return GetValue(<number>sentry_vision_e.kVisionLine, <number>object_info, obj_id);
+    return GetValue(
+      <number>sentry_vision_e.kVisionLine,
+      <number>object_info,
+      obj_id
+    );
   }
 
-    /**
+  /**
    * Get the result of vision qr value.
    * @param object_info Paramters type
    * @param obj_id:  object index
@@ -388,10 +423,14 @@ namespace Sengo1VisionSensor {
     object_info: sentry_qr_info_e,
     obj_id: number = 1
   ): number {
-    return GetValue(<number>sentry_vision_e.kVisionLine, <number>object_info, obj_id);
+    return GetValue(
+      <number>sentry_vision_e.kVisionLine,
+      <number>object_info,
+      obj_id
+    );
   }
 
-      /**
+  /**
    * Get the result of vision Qr value string.
    */
   //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode  string  of detecting result" color="#2E8B57"
@@ -400,7 +439,7 @@ namespace Sengo1VisionSensor {
   //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
   //% group="Operation Blocks"
   //% weight=89
-  export function QrcodeValueString( ): string {
+  export function QrcodeValueString(): string {
     return sengo1_GetQrCodeValue();
   }
 
@@ -441,8 +480,11 @@ namespace Sengo1VisionSensor {
     obj_id: number = 1
   ): boolean {
     return (
-      GetValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kLabel, obj_id) ==
-      lable
+      GetValue(
+        sentry_vision_e_1.kVisionBlob,
+        sentry_obj_info_e.kLabel,
+        obj_id
+      ) == lable
     );
   }
 
@@ -460,8 +502,11 @@ namespace Sengo1VisionSensor {
     obj_id: number = 1
   ): boolean {
     return (
-      GetValue(sentry_vision_e_1.kVisionCard, sentry_obj_info_e.kLabel, obj_id) ==
-      lable
+      GetValue(
+        sentry_vision_e_1.kVisionCard,
+        sentry_obj_info_e.kLabel,
+        obj_id
+      ) == lable
     );
   }
   /**
@@ -478,8 +523,11 @@ namespace Sengo1VisionSensor {
     obj_id: number = 1
   ): boolean {
     return (
-      GetValue(sentry_vision_e_1.kVisionBall, sentry_obj_info_e.kLabel, obj_id) ==
-      lable
+      GetValue(
+        sentry_vision_e_1.kVisionBall,
+        sentry_obj_info_e.kLabel,
+        obj_id
+      ) == lable
     );
   }
 }
