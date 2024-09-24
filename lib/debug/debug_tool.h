@@ -5,7 +5,7 @@
 #include "pxt.h"
 
 #if !defined(SENTRY_DEBUG_ENABLE)
-#define SENTRY_DEBUG_ENABLE 1
+#define SENTRY_DEBUG_ENABLE 0
 #endif
 
 #if SENTRY_DEBUG_ENABLE != 0
