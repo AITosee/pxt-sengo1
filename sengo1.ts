@@ -208,7 +208,7 @@ namespace Sengo1VisionSensor {
     status: sengo1_status,
     vision_type: sentry_vision_e
   ) {
-    while (sengo1_VisionSetStatus(vision_type, status) != SENGO1_OK);
+      while (sengo1_VisionSetStatus(status, vision_type) != SENGO1_OK);
   }
 
   /**
