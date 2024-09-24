@@ -343,7 +343,7 @@ namespace Sengo1VisionSensor {
   //% group="Operation Blocks" advanced=false
   //% weight=94
   export function Detected(vision_type: sentry_vision_e): number {
-    return sengo1_GetValue(<number>vision_type);
+    return sengo1_GetValue(<number>vision_type, 0, 1);
   }
 
   /**
