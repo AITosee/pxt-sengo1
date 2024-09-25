@@ -74,6 +74,6 @@ namespace tosee_sentry
     //%
     String sengo1_GetQrCodeValue()
     {
-        return String(sengo1.GetQrCodeValue());
+        return PSTR(sengo1.GetQrCodeValue());
     }
 }
