@@ -1,1 +1,1 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables></variables><block type="pxt-on-start" id="TdEg4j30Py@jbPj(32i2" x="0" y="0"></block></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><variables></variables><block type="pxt-on-start" id="TdEg4j30Py@jbPj(32i2" x="0" y="0"></block><block type="Sengo1_detected_card" id="}X#=a54tzP}(:Tv9_iFq" disabled-reasons="ORPHANED_BLOCK,MANUALLY_DISABLED" x="-3" y="371"><field name="lable">card_label_e.kCardForward</field></block></xml>

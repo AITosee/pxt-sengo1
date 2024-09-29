@@ -81,9 +81,9 @@
   "color_label_e.kColorYellow|block": "黃色",
 
   "Sengo1VisionSensor.DetectedCard|block": " Sengo1  卡片識別  識別到 %lable  ",
-  "card_label_e.kCardForward|block": "向前",
-  "card_label_e.kCardLeft|block": "向左",
-  "card_label_e.kCardRight|block": "向右",
+  "card_label_e.kCardForward|block": "前进",
+  "card_label_e.kCardLeft|block": "左转",
+  "card_label_e.kCardRight|block": "右转",
   "card_label_e.kCardTurnAround|block": "掉頭",
   "card_label_e.kCardPark|block": "停車",
 
