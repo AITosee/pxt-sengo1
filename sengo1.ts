@@ -436,7 +436,7 @@ namespace Sengo1VisionSensor {
     /**
      * Get the result of vision Qr value string.
      */
-    //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode  string  of detecting result" color="#2E8B57"
+    //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode  string  of decoding result" color="#2E8B57"
     //% inlineInputMode=inline
     //% expandableArgumentMode="enabled"
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
