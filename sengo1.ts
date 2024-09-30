@@ -61,9 +61,9 @@ declare const enum sentry_obj_info_e {
     //% block="status"
     //% blockHidden=true
     kStatus = 0,
-    //% block="x-cood"
+    //% block="x-coord"
     kXValue = 1,
-    //% block="y-cood"
+    //% block="y-coord"
     kYValue = 2,
     //% block="width"
     kWidthValue = 3,
@@ -94,22 +94,22 @@ declare const enum sentry_color_info_e {
 }
 
 declare const enum sentry_Line_info_e {
-    //% block="x-cood of ending point"
+    //% block="x-coord of ending point"
     kXValue = 1,
-    //% block="y-cood of ending point"
+    //% block="y-coord of ending point"
     kYValue,
-    //% block="x-cood of starting point"
+    //% block="x-coord of starting point"
     kWidthValue,
-    //% block="y-cood of starting point"
+    //% block="y-coord of starting point"
     kHeightValue,
     //% block="inclination angle"
     kLabel,
 }
 
 declare const enum sentry_qr_info_e {
-    //% block="x-cood"
+    //% block="x-coord"
     kXValue = 1,
-    //% block="y-cood"
+    //% block="y-coord"
     kYValue,
     //% block="width"
     kWidthValue,
@@ -256,7 +256,7 @@ namespace Sengo1VisionSensor {
      * @param w ROI width.
      * @param h ROI height.
      */
-    //% blockId=Sengo1_vision_color_param block=" Set  Sengo1  algo Color  x-cood%x| y-cood%y| width%w| height%h"
+    //% blockId=Sengo1_vision_color_param block=" Set  Sengo1  algo Color  x-coord%x| y-coord%y| width%w| height%h"
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% x.defl=50
     //% y.defl=50
@@ -436,7 +436,7 @@ namespace Sengo1VisionSensor {
     /**
      * Get the result of vision Qr value string.
      */
-    //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode  string  of detecting result" color="#2E8B57"
+    //% blockId=Sengo1_get_Qrcode_value_string block="  Sengo1  algo QrCode  string  of decoding result" color="#2E8B57"
     //% inlineInputMode=inline
     //% expandableArgumentMode="enabled"
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1

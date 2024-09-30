@@ -44,8 +44,8 @@
   "Sengo1VisionSensor.Detected|block": "  Sengo1  %vision_type  返回的结果数量 ",
 
   "Sengo1VisionSensor.GetValue|block": "  Sengo1  %vision_type  返回的 %object_info ",
-  "sentry_obj_info_e.kXValue|block": "横向坐标",
-  "sentry_obj_info_e.kYValue|block": "纵向坐标",
+  "sentry_obj_info_e.kXValue|block": "横坐标",
+  "sentry_obj_info_e.kYValue|block": "纵坐标",
   "sentry_obj_info_e.kWidthValue|block": "宽度",
   "sentry_obj_info_e.kHeightValue|block": "高度",
   "sentry_obj_info_e.kLabel|block": "标签",
@@ -64,8 +64,8 @@
   "sentry_Line_info_e.kLabel|block": "倾斜角度",
 
   "Sengo1VisionSensor.QrcodeValue|block": "  Sengo1  二维码  返回的 %object_info ",
-  "sentry_qr_info_e.kXValue|block": "横向坐标",
-  "sentry_qr_info_e.kYValue|block": "纵向坐标",
+  "sentry_qr_info_e.kXValue|block": "横坐标",
+  "sentry_qr_info_e.kYValue|block": "纵坐标",
   "sentry_qr_info_e.kWidthValue|block": "宽度",
   "sentry_qr_info_e.kHeightValue|block": "高度",
 
@@ -81,9 +81,9 @@
   "color_label_e.kColorYellow|block": "黄色",
 
   "Sengo1VisionSensor.DetectedCard|block": " Sengo1  卡片识别  识别到 %lable  ",
-  "card_label_e.kCardForward|block": "向前",
-  "card_label_e.kCardLeft|block": "向左",
-  "card_label_e.kCardRight|block": "向右",
+  "card_label_e.kCardForward|block": "前进",
+  "card_label_e.kCardLeft|block": "左转",
+  "card_label_e.kCardRight|block": "右转",
   "card_label_e.kCardTurnAround|block": "掉头",
   "card_label_e.kCardPark|block": "停车",
 
