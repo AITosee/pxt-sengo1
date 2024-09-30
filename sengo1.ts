@@ -124,7 +124,7 @@ declare const enum sengo1_addr_e {
 
 declare const enum face_label_e {
     //% block="save data as"
-    FaceLabelSave = 1,
+    FaceLabelSave = 100,
     //% block="delete data"
     FaceLabelClear = 0,
 }
