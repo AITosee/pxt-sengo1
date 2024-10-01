@@ -5,7 +5,7 @@ namespace tosee_sentry
     Sengo1 sengo1;
 
     //%
-    int sengo1_Begin(int mode, int addr)
+    int sengo1Begin(int mode, int addr)
     {
         if (mode == kI2CMode)
         {
@@ -22,19 +22,19 @@ namespace tosee_sentry
     }
 
     //%
-    int sengo1_LedSetColor(int detected_color, int undetected_color, int leval)
+    int sengo1LedSetColor(int detected_color, int undetected_color, int leval)
     {
         return sengo1.LedSetColor((sentry_led_color_e)detected_color, (sentry_led_color_e)undetected_color, leval);
     }
 
     //%
-    int sengo1_SetParamNum(int vision_type, int max_num)
+    int sengo1SetParamNum(int vision_type, int max_num)
     {
         return sengo1.SetParamNum((Sengo1::sentry_vision_e)vision_type, max_num);
     }
 
     //%
-    int sengo1_SetParam(int vision_type, Buffer buff, int param_id)
+    int sengo1SetParam(int vision_type, Buffer buff, int param_id)
     {
         if (buff->length == 10)
         {
@@ -53,7 +53,7 @@ namespace tosee_sentry
     }
 
     //%
-    int sengo1_VisionSetStatus(int status, int vision_type)
+    int sengo1VisionSetStatus(int status, int vision_type)
     {
         if (status)
         {
@@ -66,13 +66,13 @@ namespace tosee_sentry
     }
 
     //%
-    int sengo1_GetValue(int vision_type, int obj, int obj_id)
+    int sengo1GetValue(int vision_type, int obj, int obj_id)
     {
         return sengo1.GetValue((Sengo1::sentry_vision_e)vision_type, (sentry_obj_info_e)obj, obj_id);
     }
 
     //%
-    String sengo1_GetQrCodeValue()
+    String sengo1GetQrCodeValue()
     {
         return PSTR(sengo1.GetQrCodeValue());
     }

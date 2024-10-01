@@ -17,21 +17,21 @@
   "sentry_vision_e_1.kVisionFace|block": "人脸识别",
   "sentry_vision_e_1.kVisionQrCode|block": "二维码",
 
-  "Sengo1VisionSensor.Begin|block": "初始化  Sengo1  端口%mode |地址%addr ",
+  "Sengo1VisionSensor.begin|block": "初始化  Sengo1  端口%mode |地址%addr ",
 
-  "Sengo1VisionSensor.VisionSetStatus|block": "设置  Sengo1  %enable| 算法%vision_type ",
+  "Sengo1VisionSensor.setVisionStatus|block": "设置  Sengo1  %enable| 算法%vision_type ",
   "sengo1_status.Disable|block": "关闭",
   "sengo1_status.Enable|block": "开启",
 
-  "Sengo1VisionSensor.SetColorParam|block": "设置  Sengo1  颜色识别  中心横坐标%x| 中心纵坐标%y| 宽度%w| 高度%h ",
+  "Sengo1VisionSensor.setColorParam|block": "设置  Sengo1  颜色识别  中心横坐标%x| 中心纵坐标%y| 宽度%w| 高度%h ",
 
-  "Sengo1VisionSensor.SetBlobParam|block": "设置  Sengo1  色块检测  最小宽度%w| 最小高度%h | 颜色%l ",
+  "Sengo1VisionSensor.setBlobParam|block": "设置  Sengo1  色块检测  最小宽度%w| 最小高度%h | 颜色%l ",
 
-  "Sengo1VisionSensor.SetFaceParam|block": "设置  Sengo1  人脸识别  %l编号%face_id ",
+  "Sengo1VisionSensor.setFaceParam|block": "设置  Sengo1  人脸识别  %l编号%face_id ",
   "face_label_e.FaceLabelSave|block": "保存数据并",
   "face_label_e.FaceLabelClear|block": "删除",
 
-  "Sengo1VisionSensor.LedSetColor|block": "设置  Sengo1  检测到目标时LED显示 %detected_color|否则 %undetected_color亮度(1~15)%leval ",
+  "Sengo1VisionSensor.ledSetColor|block": "设置  Sengo1  检测到目标时LED显示 %detected_color|否则 %undetected_color亮度(1~15)%leval ",
   "sentry_led_color_e.kLedBlue|block": "蓝色",
   "sentry_led_color_e.kLedClose|block": "关闭",
   "sentry_led_color_e.kLedCyan|block": "青色",
@@ -41,38 +41,38 @@
   "sentry_led_color_e.kLedWhite|block": "白色",
   "sentry_led_color_e.kLedYellow|block": "黄色",
 
-  "Sengo1VisionSensor.Detected|block": "  Sengo1  %vision_type  返回的结果数量 ",
+  "Sengo1VisionSensor.visionDetectedNum|block": "  Sengo1  %vision_type  返回的结果数量 ",
 
-  "Sengo1VisionSensor.GetValue|block": "  Sengo1  %vision_type  返回的 %object_info ",
+  "Sengo1VisionSensor.visionValue|block": "  Sengo1  %vision_type  返回的 %object_info ",
   "sentry_obj_info_e.kXValue|block": "横坐标",
   "sentry_obj_info_e.kYValue|block": "纵坐标",
   "sentry_obj_info_e.kWidthValue|block": "宽度",
   "sentry_obj_info_e.kHeightValue|block": "高度",
   "sentry_obj_info_e.kLabel|block": "标签",
 
-  "Sengo1VisionSensor.ColorRcgValue|block": "  Sengo1  颜色识别  返回的 %object_info ",
+  "Sengo1VisionSensor.colorRgbValue|block": "  Sengo1  颜色识别  返回的 %object_info ",
   "sentry_color_info_e.kBValue|block": "红色分量值",
   "sentry_color_info_e.kGValue|block": "绿色分量值",
   "sentry_color_info_e.kRValue|block": "蓝色分量值",
   "sentry_color_info_e.kLabel|block": "标签",
 
-  "Sengo1VisionSensor.LineValue|block": "  Sengo1  线条检测  返回的 %object_info ",
+  "Sengo1VisionSensor.lineValue|block": "  Sengo1  线条检测  返回的 %object_info ",
   "sentry_Line_info_e.kXValue|block": "终点横坐标",
   "sentry_Line_info_e.kYValue|block": "终点纵坐标",
   "sentry_Line_info_e.kWidthValue|block": "起点横坐标",
   "sentry_Line_info_e.kHeightValue|block": "起点纵坐标",
   "sentry_Line_info_e.kLabel|block": "倾斜角度",
 
-  "Sengo1VisionSensor.QrcodeValue|block": "  Sengo1  二维码  返回的 %object_info ",
+  "Sengo1VisionSensor.qrCodeValue|block": "  Sengo1  二维码  返回的 %object_info ",
   "sentry_qr_info_e.kXValue|block": "横坐标",
   "sentry_qr_info_e.kYValue|block": "纵坐标",
   "sentry_qr_info_e.kWidthValue|block": "宽度",
   "sentry_qr_info_e.kHeightValue|block": "高度",
 
-  "Sengo1VisionSensor.QrcodeValueString|block": "  Sengo1  二维码  返回的结果字符串",
+  "Sengo1VisionSensor.qrCodeValueString|block": "  Sengo1  二维码  返回的结果字符串",
 
-  "Sengo1VisionSensor.DetectedColor|block": " Sengo1  颜色识别  识别到 %lable ",
-  "Sengo1VisionSensor.DetectedBlob|block": " Sengo1  色块检测  检测到 %lable块 ",
+  "Sengo1VisionSensor.detectedColor|block": " Sengo1  颜色识别  识别到 %lable ",
+  "Sengo1VisionSensor.detectedBlob|block": " Sengo1  色块检测  检测到 %lable块 ",
   "color_label_e.kColorBlack|block": "黑色",
   "color_label_e.kColorWhite|block": "白色",
   "color_label_e.kColorRed|block": "红色",
@@ -80,14 +80,14 @@
   "color_label_e.kColorBlue|block": "蓝色",
   "color_label_e.kColorYellow|block": "黄色",
 
-  "Sengo1VisionSensor.DetectedCard|block": " Sengo1  卡片识别  识别到 %lable  ",
+  "Sengo1VisionSensor.detectedCard|block": " Sengo1  卡片识别  识别到 %lable  ",
   "card_label_e.kCardForward|block": "前进",
   "card_label_e.kCardLeft|block": "左转",
   "card_label_e.kCardRight|block": "右转",
   "card_label_e.kCardTurnAround|block": "掉头",
   "card_label_e.kCardPark|block": "停车",
 
-  "Sengo1VisionSensor.DetectedBall|block": " Sengo1  球体检测  检测到 %lable  ",
+  "Sengo1VisionSensor.detectedBall|block": " Sengo1  球体检测  检测到 %lable  ",
   "ball_label_e.kBallTableTennis|block": "乒乓球",
   "ball_label_e.kBallTennis|block": "网球",
 

@@ -133,69 +133,62 @@ declare const enum face_label_e {
 namespace Sengo1VisionSensor {
     const SENGO1_OK = 0x00;
 
-    //% shim=tosee_sentry::sengo1_Begin
-    function sengo1_Begin(mode: number, addr: number): number {
-        console.log("sengo1_Begin " + addr.toString());
-        return 0;
+    //% shim=tosee_sentry::sengo1Begin
+    function sengo1Begin(mode: number, addr: number): number {
+        return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1_LedSetColor
-    function sengo1_LedSetColor(
+    //% shim=tosee_sentry::sengo1LedSetColor
+    function sengo1LedSetColor(
         detected_color: number,
         undetected_color: number,
         leval: number
     ): number {
-        console.log("sengo1_LedSetColor " + detected_color.toString());
-        return 0;
+        return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1_SetParamNum
-    function sengo1_SetParamNum(vision_type: number, max_num: number): number {
-        console.log("sengo1_SetParamNum " + vision_type.toString());
-        return 0;
+    //% shim=tosee_sentry::sengo1SetParamNum
+    function sengo1SetParamNum(vision_type: number, max_num: number): number {
+        return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1_SetParam
-    function sengo1_SetParam(
+    //% shim=tosee_sentry::sengo1SetParam
+    function sengo1SetParam(
         vision_type: number,
         param: Buffer,
         param_id: number = 1
     ): number {
-        console.log("sengo1_SetParam " + param.toHex());
-        return 0;
+        return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1_VisionSetStatus
-    function sengo1_VisionSetStatus(status: number, vision_type: number): number {
-        console.log("sengo1_VisionSetStatus " + vision_type.toString());
-        return 0;
+    //% shim=tosee_sentry::sengo1VisionSetStatus
+    function sengo1VisionSetStatus(status: number, vision_type: number): number {
+        return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1_GetValue
-    function sengo1_GetValue(
+    //% shim=tosee_sentry::sengo1GetValue
+    function sengo1GetValue(
         vision_type: number,
         object_info: number = 0,
         obj_id: number = 1
     ): number {
-        console.log("sengo1_GetValue " + vision_type.toString());
-        return 0;
+        return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1_GetQrCodeValue
-    function sengo1_GetQrCodeValue(): string {
-        console.log("sengo1_GetQrCodeValue ");
+    //% shim=tosee_sentry::sengo1GetQrCodeValue
+    function sengo1GetQrCodeValue(): string {
         return "";
     }
 
     /**
-     * Begin Sengo1.
+     * begin Sengo1.
      */
-    //% blockId=Sengo1_begin block=" Initialize  Sengo1  port %mode |addr%addr "
+    //% blockId=sengo1Begin block=" Initialize  Sengo1  port %mode |addr%addr "
     //% mode.defl=sentry_mode_e.kI2CMode
     //% group="Settings Blocks"
     //% weight=100
-    export function Begin(mode: sentry_mode_e, addr: sengo1_addr_e) {
-        while (sengo1_Begin(mode, addr) != SENGO1_OK);
+    export function begin(mode: sentry_mode_e, addr: sengo1_addr_e) {
+        while (sengo1Begin(mode, addr) != SENGO1_OK);
     }
 
     /**
@@ -204,11 +197,11 @@ namespace Sengo1VisionSensor {
     //% blockId=Sengo1_vision_Set block=" Set  Sengo1  %enable| algo%vision_type "
     //% group="Settings Blocks"
     //% weight=98
-    export function VisionSetStatus(
+    export function setVisionStatus(
         status: sengo1_status,
         vision_type: sentry_vision_e
     ) {
-        while (sengo1_VisionSetStatus(status, vision_type) != SENGO1_OK);
+        while (sengo1VisionSetStatus(status, vision_type) != SENGO1_OK);
     }
 
     /**
@@ -225,13 +218,13 @@ namespace Sengo1VisionSensor {
     //% width=200 inlineInputMode=inline
     //% group="Settings Blocks"
     //% weight=99
-    export function LedSetColor(
+    export function ledSetColor(
         detected_color: sentry_led_color_e,
         undetected_color: sentry_led_color_e,
         leval: number = 1
     ) {
         while (
-            sengo1_LedSetColor(detected_color, undetected_color, leval) != SENGO1_OK
+            sengo1LedSetColor(detected_color, undetected_color, leval) != SENGO1_OK
         );
     }
 
@@ -245,8 +238,8 @@ namespace Sengo1VisionSensor {
     //% group="Settings Blocks"
     //% blockHidden=true
     //% weight=97
-    export function SetParamNum(vision_type: sentry_vision_e, max_num: number) {
-        while (sengo1_SetParamNum(vision_type, max_num) != SENGO1_OK);
+    export function setParamNum(vision_type: sentry_vision_e, max_num: number) {
+        while (sengo1SetParamNum(vision_type, max_num) != SENGO1_OK);
     }
 
     /**
@@ -265,7 +258,7 @@ namespace Sengo1VisionSensor {
     //% inlineInputMode=inline
     //% group="Settings Blocks"
     //% weight=96
-    export function SetColorParam(
+    export function setColorParam(
         x: number,
         y: number,
         w: number,
@@ -279,7 +272,7 @@ namespace Sengo1VisionSensor {
         prama.setNumber(NumberFormat.UInt16BE, 6, h);
 
         while (
-            sengo1_SetParam(sentry_vision_e.kVisionColor, prama, obj_id) != SENGO1_OK
+            sengo1SetParam(sentry_vision_e.kVisionColor, prama, obj_id) != SENGO1_OK
         );
     }
 
@@ -297,7 +290,7 @@ namespace Sengo1VisionSensor {
     //% inlineInputMode=inline
     //% group="Settings Blocks"
     //% weight=95
-    export function SetBlobParam(
+    export function setBlobParam(
         w: number,
         h: number,
         l: color_label_e,
@@ -310,7 +303,7 @@ namespace Sengo1VisionSensor {
         prama.setNumber(NumberFormat.UInt16BE, 8, l);
 
         while (
-            sengo1_SetParam(sentry_vision_e.kVisionBlob, prama, obj_id) != SENGO1_OK
+            sengo1SetParam(sentry_vision_e.kVisionBlob, prama, obj_id) != SENGO1_OK
         );
     }
 
@@ -325,13 +318,13 @@ namespace Sengo1VisionSensor {
     //% inlineInputMode=inline
     //% group="Settings Blocks"
     //% weight=94
-    export function SetFaceParam(l: face_label_e, face_id: number = 1) {
+    export function setFaceParam(l: face_label_e, face_id: number = 1) {
         let prama = pins.createBuffer(10);
 
         prama.setNumber(NumberFormat.UInt16BE, 8, l);
 
         while (
-            sengo1_SetParam(sentry_vision_e.kVisionBlob, prama, face_id) != SENGO1_OK
+            sengo1SetParam(sentry_vision_e.kVisionBlob, prama, face_id) != SENGO1_OK
         );
     }
 
@@ -342,8 +335,8 @@ namespace Sengo1VisionSensor {
     //% blockId=Sengo_detected block="  Sengo1  algo%vision_type  num of results" color="#2E8B57"
     //% group="Operation Blocks" advanced=false
     //% weight=94
-    export function Detected(vision_type: sentry_vision_e): number {
-        return sengo1_GetValue(<number>vision_type, 0, 1);
+    export function visionDetectedNum(vision_type: sentry_vision_e): number {
+        return sengo1GetValue(<number>vision_type, 0, 1);
     }
 
     /**
@@ -358,11 +351,11 @@ namespace Sengo1VisionSensor {
     //% object_info.defl=5
     //% group="Operation Blocks"
     //% weight=93
-    export function ColorRcgValue(
+    export function colorRgbValue(
         object_info: sentry_color_info_e,
         obj_id: number = 1
     ): number {
-        return GetValue(
+        return visionValue(
             <number>sentry_vision_e.kVisionColor,
             <number>object_info,
             obj_id
@@ -381,12 +374,12 @@ namespace Sengo1VisionSensor {
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=92
-    export function GetValue(
+    export function visionValue(
         vision_type: sentry_vision_e_1,
         object_info: sentry_obj_info_e,
         obj_id: number = 1
     ): number {
-        return sengo1_GetValue(<number>vision_type, <number>object_info, obj_id);
+        return sengo1GetValue(<number>vision_type, <number>object_info, obj_id);
     }
 
     /**
@@ -400,11 +393,11 @@ namespace Sengo1VisionSensor {
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=91
-    export function LineValue(
+    export function lineValue(
         object_info: sentry_Line_info_e,
         obj_id: number = 1
     ): number {
-        return GetValue(
+        return visionValue(
             <number>sentry_vision_e.kVisionLine,
             <number>object_info,
             obj_id
@@ -422,11 +415,11 @@ namespace Sengo1VisionSensor {
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=90
-    export function QrcodeValue(
+    export function qrCodeValue(
         object_info: sentry_qr_info_e,
         obj_id: number = 1
     ): number {
-        return GetValue(
+        return visionValue(
             <number>sentry_vision_e.kVisionQrCode,
             <number>object_info,
             obj_id
@@ -442,8 +435,8 @@ namespace Sengo1VisionSensor {
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=89
-    export function QrcodeValueString(): string {
-        return sengo1_GetQrCodeValue();
+    export function qrCodeValueString(): string {
+        return sengo1GetQrCodeValue();
     }
 
     /**
@@ -455,12 +448,12 @@ namespace Sengo1VisionSensor {
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=88
-    export function DetectedColor(
+    export function detectedColor(
         lable: color_label_e,
         obj_id: number = 1
     ): boolean {
         return (
-            GetValue(
+            visionValue(
                 sentry_vision_e_1.kVisionColor,
                 sentry_obj_info_e.kLabel,
                 obj_id
@@ -478,12 +471,12 @@ namespace Sengo1VisionSensor {
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=87
-    export function DetectedBlob(
+    export function detectedBlob(
         lable: color_label_e,
         obj_id: number = 1
     ): boolean {
         return (
-            GetValue(
+            visionValue(
                 sentry_vision_e_1.kVisionBlob,
                 sentry_obj_info_e.kLabel,
                 obj_id
@@ -500,12 +493,12 @@ namespace Sengo1VisionSensor {
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=86
-    export function DetectedCard(
+    export function detectedCard(
         lable: card_label_e,
         obj_id: number = 1
     ): boolean {
         return (
-            GetValue(
+            visionValue(
                 sentry_vision_e_1.kVisionCard,
                 sentry_obj_info_e.kLabel,
                 obj_id
@@ -521,12 +514,12 @@ namespace Sengo1VisionSensor {
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=85
-    export function DetectedBall(
+    export function detectedBall(
         lable: ball_label_e,
         obj_id: number = 1
     ): boolean {
         return (
-            GetValue(
+            visionValue(
                 sentry_vision_e_1.kVisionBall,
                 sentry_obj_info_e.kLabel,
                 obj_id
