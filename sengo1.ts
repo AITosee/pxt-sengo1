@@ -23,7 +23,7 @@ declare const enum sentry_vision_e_1 {
 }
 
 declare const enum sentry_led_color_e {
-    //% block="off"
+    //% block="Black"
     kLedClose = 0,
     //% block="Red"
     kLedRed = 1,
@@ -129,7 +129,9 @@ declare const enum face_label_e {
     FaceLabelClear = 0,
 }
 
-//% color="#ff6600" icon="\uf085"
+//% block="Sengo1 Vision Sensor" color="#ff6600" icon="\uf085"
+//% block.loc.zh-cn="Sengo1视觉传感器"
+//% block.loc.zh-tw="Sengo1視覺傳感器"
 namespace Sengo1VisionSensor {
     const SENGO1_OK = 0x00;
 
@@ -324,7 +326,7 @@ namespace Sengo1VisionSensor {
         prama.setNumber(NumberFormat.UInt16BE, 8, l);
 
         while (
-            sengo1SetParam(sentry_vision_e.kVisionBlob, prama, face_id) != SENGO1_OK
+            sengo1SetParam(sentry_vision_e.kVisionFace, prama, face_id) != SENGO1_OK
         );
     }
 
@@ -444,7 +446,7 @@ namespace Sengo1VisionSensor {
      * @param lable Color lable
      * @param obj_id:  object index
      */
-    //% blockId=Sengo1_detected_color block=" Sengo1  algo Color  recognized %lable of result" color="#2E8B57"
+    //% blockId=Sengo1_detected_color block=" Sengo1  algo Color  recognized %lable " color="#2E8B57"
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
     //% weight=88

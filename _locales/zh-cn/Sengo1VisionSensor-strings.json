@@ -29,11 +29,11 @@
 
   "Sengo1VisionSensor.setFaceParam|block": "设置  Sengo1  人脸识别  %l编号%face_id ",
   "face_label_e.FaceLabelSave|block": "保存数据并",
-  "face_label_e.FaceLabelClear|block": "删除",
+  "face_label_e.FaceLabelClear|block": "删除数据",
 
   "Sengo1VisionSensor.ledSetColor|block": "设置  Sengo1  检测到目标时LED显示 %detected_color|否则 %undetected_color亮度(1~15)%leval ",
   "sentry_led_color_e.kLedBlue|block": "蓝色",
-  "sentry_led_color_e.kLedClose|block": "关闭",
+  "sentry_led_color_e.kLedClose|block": "黑色",
   "sentry_led_color_e.kLedCyan|block": "青色",
   "sentry_led_color_e.kLedGreen|block": "绿色",
   "sentry_led_color_e.kLedPurple|block": "紫色",
@@ -91,7 +91,6 @@
   "ball_label_e.kBallTableTennis|block": "乒乓球",
   "ball_label_e.kBallTennis|block": "网球",
 
-  "{id:category}Sengo1VisionSensor": "Sengo1视觉传感器",
   "{id:group}Settings Blocks": "设置模块",
   "{id:group}Operation Blocks": "运行模块"
 }
