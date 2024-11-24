@@ -87,7 +87,7 @@
   "card_label_e.kCardTurnAround|block": "掉头",
   "card_label_e.kCardPark|block": "停车",
 
-  "Sengo1VisionSensor.detectedBall|block": " Sengo1  球体检测  检测到 %lable  ",
+  "Sengo1VisionSensor.detectedBall|block": " Sengo1  球体识别  识别到 %lable  ",
   "ball_label_e.kBallTableTennis|block": "乒乓球",
   "ball_label_e.kBallTennis|block": "网球",
 
