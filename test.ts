@@ -15,51 +15,17 @@ function testVisionColor() {
         }
     }
 }
-function testVisionBlob() {
-    Sengo1VisionSensor.ledSetColor(sentry_led_color_e.kLedBlue, sentry_led_color_e.kLedYellow, 1)
-    Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionBlob)
-    Sengo1VisionSensor.setBlobParam(3, 4, color_label_e.kColorBlue)
-    while (true) {
-        if (Sengo1VisionSensor.visionDetectedNum(sentry_vision_e.kVisionBlob) > 0) {
-            serial.writeValue("x", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kXValue))
-            serial.writeValue("y", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kYValue))
-            serial.writeValue("w", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kWidthValue))
-            serial.writeValue("h", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kXValue))
-            serial.writeValue("l", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kLabel))
-            if (Sengo1VisionSensor.detectedBlob(color_label_e.kColorRed)) {
-                serial.writeLine("Blue")
-            }
-            Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionBlob)
-            break;
-        }
-    }
-}
-function testVisionFace() {
+function testVisionBody() {
     Sengo1VisionSensor.ledSetColor(sentry_led_color_e.kLedPurple, sentry_led_color_e.kLedYellow, 1)
-    Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionFace)
+    Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionBody)
     while (true) {
-        if (Sengo1VisionSensor.visionDetectedNum(sentry_vision_e.kVisionFace) > 0) {
-            serial.writeValue("x", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kXValue))
-            serial.writeValue("y", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kYValue))
-            serial.writeValue("w", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kWidthValue))
-            serial.writeValue("h", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kXValue))
-            serial.writeValue("l", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kLabel))
-            Sengo1VisionSensor.setVisionStatus(sengo1_status.Disable, sentry_vision_e.kVisionFace)
-            break;
-        }
-    }
-}
-function testVisionLine() {
-    Sengo1VisionSensor.ledSetColor(sentry_led_color_e.kLedRed, sentry_led_color_e.kLedYellow, 1)
-    Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionLine)
-    while (true) {
-        if (Sengo1VisionSensor.visionDetectedNum(sentry_vision_e.kVisionLine) > 0) {
-            serial.writeValue("x", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kXValue))
-            serial.writeValue("y", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kYValue))
-            serial.writeValue("w", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kWidthValue))
-            serial.writeValue("h", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kHeightValue))
-            serial.writeValue("a", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kLabel))
-            Sengo1VisionSensor.setVisionStatus(sengo1_status.Disable, sentry_vision_e.kVisionLine)
+        if (Sengo1VisionSensor.visionDetectedNum(sentry_vision_e.kVisionBody) > 0) {
+            serial.writeValue("x", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kXValue))
+            serial.writeValue("y", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kYValue))
+            serial.writeValue("w", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kWidthValue))
+            serial.writeValue("h", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kXValue))
+            serial.writeValue("l", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kLabel))
+            Sengo1VisionSensor.setVisionStatus(sengo1_status.Disable, sentry_vision_e.kVisionBody)
             break;
         }
     }
@@ -82,6 +48,21 @@ function testVisionCard() {
         }
     }
 }
+function testVisionFace() {
+    Sengo1VisionSensor.ledSetColor(sentry_led_color_e.kLedPurple, sentry_led_color_e.kLedYellow, 1)
+    Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionFace)
+    while (true) {
+        if (Sengo1VisionSensor.visionDetectedNum(sentry_vision_e.kVisionFace) > 0) {
+            serial.writeValue("x", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kXValue))
+            serial.writeValue("y", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kYValue))
+            serial.writeValue("w", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kWidthValue))
+            serial.writeValue("h", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kXValue))
+            serial.writeValue("l", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionFace, sentry_obj_info_e.kLabel))
+            Sengo1VisionSensor.setVisionStatus(sengo1_status.Disable, sentry_vision_e.kVisionFace)
+            break;
+        }
+    }
+}
 function testVisionBall() {
     Sengo1VisionSensor.ledSetColor(sentry_led_color_e.kLedCyan, sentry_led_color_e.kLedBlue, 1)
     Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionBall)
@@ -96,6 +77,21 @@ function testVisionBall() {
                 serial.writeLine("TableTennis")
             }
             Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionBall)
+            break;
+        }
+    }
+}
+function testVisionLine() {
+    Sengo1VisionSensor.ledSetColor(sentry_led_color_e.kLedRed, sentry_led_color_e.kLedYellow, 1)
+    Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionLine)
+    while (true) {
+        if (Sengo1VisionSensor.visionDetectedNum(sentry_vision_e.kVisionLine) > 0) {
+            serial.writeValue("x", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kXValue))
+            serial.writeValue("y", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kYValue))
+            serial.writeValue("w", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kWidthValue))
+            serial.writeValue("h", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kHeightValue))
+            serial.writeValue("a", Sengo1VisionSensor.lineValue(sentry_Line_info_e.kLabel))
+            Sengo1VisionSensor.setVisionStatus(sengo1_status.Disable, sentry_vision_e.kVisionLine)
             break;
         }
     }
@@ -115,22 +111,26 @@ function testVisionQrCode() {
         }
     }
 }
-function testVisionBody() {
-    Sengo1VisionSensor.ledSetColor(sentry_led_color_e.kLedPurple, sentry_led_color_e.kLedYellow, 1)
-    Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionBody)
+function testVisionBlob() {
+    Sengo1VisionSensor.ledSetColor(sentry_led_color_e.kLedBlue, sentry_led_color_e.kLedYellow, 1)
+    Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionBlob)
+    Sengo1VisionSensor.setBlobParam(3, 4, color_label_e.kColorBlue)
     while (true) {
-        if (Sengo1VisionSensor.visionDetectedNum(sentry_vision_e.kVisionBody) > 0) {
-            serial.writeValue("x", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kXValue))
-            serial.writeValue("y", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kYValue))
-            serial.writeValue("w", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kWidthValue))
-            serial.writeValue("h", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kXValue))
-            serial.writeValue("l", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBody, sentry_obj_info_e.kLabel))
-            Sengo1VisionSensor.setVisionStatus(sengo1_status.Disable, sentry_vision_e.kVisionBody)
+        if (Sengo1VisionSensor.visionDetectedNum(sentry_vision_e.kVisionBlob) > 0) {
+            serial.writeValue("x", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kXValue))
+            serial.writeValue("y", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kYValue))
+            serial.writeValue("w", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kWidthValue))
+            serial.writeValue("h", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kXValue))
+            serial.writeValue("l", Sengo1VisionSensor.visionValue(sentry_vision_e_1.kVisionBlob, sentry_obj_info_e.kLabel))
+            if (Sengo1VisionSensor.detectedBlob(color_label_e.kColorRed)) {
+                serial.writeLine("Blue")
+            }
+            Sengo1VisionSensor.setVisionStatus(sengo1_status.Enable, sentry_vision_e.kVisionBlob)
             break;
         }
     }
 }
-Sengo1VisionSensor.begin(sentry_mode_e.kI2CMode, sengo1_addr_e.ADDR1)
+Sengo1VisionSensor.begin(sentry_mode_e.kSerialMode, sengo1_addr_e.ADDR1)
 basic.forever(function () {
     testVisionColor()
     testVisionBlob()

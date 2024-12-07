@@ -135,12 +135,12 @@ declare const enum face_label_e {
 namespace Sengo1VisionSensor {
     const SENGO1_OK = 0x00;
 
-    //% shim=tosee_sentry::sengo1Begin
+    //% shim=tosee_sentry::sengo1_Begin
     function sengo1_Begin(mode: number, addr: number, buad: number, user_serial: number): number {
         return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1LedSetColor
+    //% shim=tosee_sentry::sengo1_LedSetColor
     function sengo1_LedSetColor(
         detected_color: number,
         undetected_color: number,
@@ -149,12 +149,12 @@ namespace Sengo1VisionSensor {
         return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1SetParamNum
+    //% shim=tosee_sentry::sengo1_SetParamNum
     function sengo1_SetParamNum(vision_type: number, max_num: number): number {
         return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1SetParam
+    //% shim=tosee_sentry::sengo1_SetParam
     function sengo1_SetParam(
         vision_type: number,
         param: Buffer,
@@ -163,12 +163,12 @@ namespace Sengo1VisionSensor {
         return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1VisionSetStatus
+    //% shim=tosee_sentry::sengo1_VisionSetStatus
     function sengo1_VisionSetStatus(status: number, vision_type: number): number {
         return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1GetValue
+    //% shim=tosee_sentry::sengo1_GetValue
     function sengo1_GetValue(
         vision_type: number,
         object_info: number = 0,
@@ -177,7 +177,7 @@ namespace Sengo1VisionSensor {
         return SENGO1_OK;
     }
 
-    //% shim=tosee_sentry::sengo1GetQrCodeValue
+    //% shim=tosee_sentry::sengo1_GetQrCodeValue
     function sengo1_GetQrCodeValue(): string {
         return "";
     }
@@ -190,7 +190,7 @@ namespace Sengo1VisionSensor {
     //% group="Settings Blocks"
     //% weight=100
     export function begin(mode: sentry_mode_e, addr: sengo1_addr_e) {
-        while (sengo1_Begin(mode, addr, 9600, 1) != SENGO1_OK);
+        while (sengo1_Begin(mode, addr, 9600, 0) != SENGO1_OK);
     }
 
     /**

@@ -1,35 +1,35 @@
 declare namespace Sengo1VisionSensor {
   
-  //% shim=tosee_sentry::sengo1Begin
+  //% shim=tosee_sentry::sengo1_Begin
   function sengo1_Begin(mode: number, addr: number, buad: number, user_serial: number): number;
 
-  //% shim=tosee_sentry::sengo1LedSetColor
+  //% shim=tosee_sentry::sengo1_LedSetColor
   function sengo1_LedSetColor(
     detected_color: number,
     undetected_color: number,
     leval: number
   ): number;
 
-  //% shim=tosee_sentry::sengo1SetParamNum
+  //% shim=tosee_sentry::sengo1_SetParamNum
   function sengo1_SetParamNum(vision_type: number, max_num: number): number;
 
-  //% shim=tosee_sentry::sengo1SetParam
+  //% shim=tosee_sentry::sengo1_SetParam
   function sengo1_SetParam(
     vision_type: number,
     param: Buffer,
     param_id: number
   ): number;
 
-  //% shim=tosee_sentry::sengo1VisionSetStatus
+  //% shim=tosee_sentry::sengo1_VisionSetStatus
   function sengo1_VisionSetStatus(status: number, vision_type: number): number;
 
-  //% shim=tosee_sentry::sengo1GetValue
+  //% shim=tosee_sentry::sengo1_GetValue
   function sengo1_GetValue(
     vision_type: number,
     object_info: number,
     obj_id: number
   ): number;
 
-  //% shim=tosee_sentry::sengo1GetQrCodeValue
+  //% shim=tosee_sentry::sengo1_GetQrCodeValue
   function sengo1_GetQrCodeValue(): string;
 }
