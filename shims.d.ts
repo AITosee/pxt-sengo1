@@ -1,7 +1,7 @@
 declare namespace Sengo1VisionSensor {
   
   //% shim=tosee_sentry::sengo1Begin
-  function sengo1Begin(mode: number, addr: number): number;
+  function sengo1Begin(mode: number, addr: number, buad: number, user_serial: number): number;
 
   //% shim=tosee_sentry::sengo1LedSetColor
   function sengo1LedSetColor(

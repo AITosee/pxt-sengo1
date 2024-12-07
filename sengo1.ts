@@ -136,7 +136,7 @@ namespace Sengo1VisionSensor {
     const SENGO1_OK = 0x00;
 
     //% shim=tosee_sentry::sengo1Begin
-    function sengo1Begin(mode: number, addr: number): number {
+    function sengo1Begin(mode: number, addr: number, buad: number, user_serial: number): number {
         return SENGO1_OK;
     }
 
@@ -190,7 +190,7 @@ namespace Sengo1VisionSensor {
     //% group="Settings Blocks"
     //% weight=100
     export function begin(mode: sentry_mode_e, addr: sengo1_addr_e) {
-        while (sengo1Begin(mode, addr) != SENGO1_OK);
+        while (sengo1Begin(mode, addr, 9600, 0) != SENGO1_OK);
     }
 
     /**
