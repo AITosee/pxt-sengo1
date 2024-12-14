@@ -494,7 +494,7 @@ namespace Sengo1VisionSensor {
     //% blockId=Sengo1_detected_card block=" Sengo1  algo Card  recognized %lable" color="#2E8B57"
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
-    //% weight=86
+    //% weight=85
     export function detectedCard(
         lable: card_label_e,
         obj_id: number = 1
@@ -515,7 +515,7 @@ namespace Sengo1VisionSensor {
     //% blockId=Sengo1_detected_ball block=" Sengo1  algo Ball  recognized %lable" color="#2E8B57"
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Operation Blocks"
-    //% weight=85
+    //% weight=86
     export function detectedBall(
         lable: ball_label_e,
         obj_id: number = 1
