@@ -334,7 +334,7 @@ namespace Sengo1VisionSensor {
      * Get vision detected number
      * @param type vision type
      */
-    //% blockId=Sengo_detected block="  Sengo1  algo%vision_type  num of results" color="#2E8B57"
+    //% blockId=Sengo_detected block="  Sengo1  algo%vision_type  num of result" color="#2E8B57"
     //% group="Operation Blocks" advanced=false
     //% weight=94
     export function visionDetectedNum(vision_type: sentry_vision_e): number {
