@@ -284,7 +284,7 @@ namespace Sengo1VisionSensor {
      * @param h detecte min height.
      * @param l detecte lable.
      */
-    //% blockId=Sengo1_vision_blob_param block=" Set  Sengo1  algo Blob  min-width%w| min-height%h| lable%l"
+    //% blockId=Sengo1_vision_blob_param block=" Set  Sengo1  algo Blob  min-width%w| min-height%h| color%l"
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% w.defl=3
     //% h.defl=4
